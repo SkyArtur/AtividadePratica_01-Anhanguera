@@ -1,7 +1,13 @@
 from utils import *
+import os
 
 
-if __name__ == '__main__':
+
+def app():
+
+    def clear():
+        os.system('cls' if os.name == 'nt' else 'clear')
+
     db = BancoDeDados(
         [
             Aluno(matricula='000000001', nome='Aline Ramos', notas=[10, 7.5, 8, 6]),
@@ -10,12 +16,22 @@ if __name__ == '__main__':
         ]
     )
     while True:
+        clear()
         executar = menu_numerico(menu_inicial_texto, [0, 1])
         if executar == 1:
+            clear()
             operacao_aluno = menu_numerico(menu_operacoes_sistema, [1, 2])
             if operacao_aluno == 1:
+                clear()
                 db.visualizar_alunos()
             elif operacao_aluno == 2:
+                clear()
                 db.adicionar_aluno()
         else:
             break
+
+
+
+
+if __name__ == '__main__':
+    app()
