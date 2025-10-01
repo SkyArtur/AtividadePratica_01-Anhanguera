@@ -1,4 +1,4 @@
-from .variables import *
+from utils import *
 
 def controle_recursivo(fn: Callable) -> Callable:
     """

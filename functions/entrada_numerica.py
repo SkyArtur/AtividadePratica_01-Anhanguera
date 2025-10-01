@@ -13,12 +13,3 @@ def entrada_numerica(_rotulo: str, _decimal: bool = False, maxx: int = None, *ar
             print(error)
     else:
         return num if _decimal else int(num)
-
-def menu_numerico(rotulo: str, opcoes: list[int]):
-    msg = f'Opção invalida! Apenas números entre {min(opcoes)} e {max(opcoes)}.'
-    while True:
-        opcao = entrada_numerica(rotulo)
-        if opcao in opcoes:
-            return opcao
-        else:
-            print(msg_de_alerta.format(menu_numerico.__name__, msg))
